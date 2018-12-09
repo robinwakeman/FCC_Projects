@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+
+    <title>Title</title>
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+
+    <!-- Import Font, Icon Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Import stylesheets -->
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <h1 id="title"> Survey Form </h1>
+</header>
+<main>
+    <div class="form-container">
+
+       <p id="description"> description </p>
+
+      <form id="survey-form">
+
+        <label for="name" id="name-label"> Name: </label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email" id="email-label"> Email: </label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="number" id="number-label"> Age: </label>
+        <input type="number" id="number" placeholder="Enter your age" step="1" min="1" max="100" required>
+
+        <select id="dropdown">
+          <option> Dropdown </option>
+          <option> One </option>
+          <option> Two </option>
+        </select>
+
+        <fieldset>
+          <legend>Radio Buttons</legend>
+          <input id="radio-one" type="radio" name="radio-items" value="1">
+          <label for="radio-one"> One </label>
+          <input id="radio-two" type="radio" name="radio-items" value="2">
+          <label for="radio-two"> Two </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Check Boxes</legend>
+          <input id="check-one" type="checkbox" name="check-items" value="1">
+          <label for="check-one"> One </label>
+          <input id="check-two" type="checkbox" name="check-items" value="2">
+          <label for="check-two"> Two </label>
+        </fieldset>
+
+        <label for="large-textbox"> Text area: </label>
+        <textarea id="large-textbox"></textarea>
+
+        <button type="submit" id="submit"> Submit </button>
+
+      </form>
+    </div>
+</main>
+<footer>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</footer>
+</body>
+</html>
