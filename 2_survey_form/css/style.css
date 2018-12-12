@@ -1,0 +1,102 @@
+body {
+  color: #4C364D;
+  background: repeating-linear-gradient(
+    160deg,
+    #FDF0CF 0px,
+    #FDF0CF 50%,
+    #F7A992 50%,
+    #F7A992 100%
+  );
+
+}
+#title {
+  display: flex;
+  justify-content: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 2em;
+}
+.form-container {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
+  position: relative;
+  height: 840px;
+  width: 80%;
+  max-width: 800px;
+  min-width: 563px;
+  margin: 2% auto 6% auto;
+  padding: 4%;
+  background: #FDF0CF;
+  border-radius: 1%;
+}
+#description {
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.input-box {
+  width: 44%;
+  padding: 0.4em;
+  font-size: 14px;
+  border-radius: 8%;
+  color: #4C364D;
+}
+
+#number {
+  width: 80px;
+}
+
+#dropdown {
+  padding: 10px;
+  margin: 0.4em 0;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #4C364D;
+  border-radius: 8%;
+}
+input[type='radio'] {
+  height: 2em;
+  transform: scale(1.2);
+}
+input[type='checkbox'] {
+  height: 2em;
+  transform: scale(1.2);
+}
+.radio div {
+  display: inline;
+  margin: auto 0.2em;
+}
+.radio div label {
+  margin: auto 0.2em;
+}
+.check div {
+  display: inline;
+  margin: auto 0.2em;
+}
+.check div label {
+  margin: auto 0.1em;
+}
+
+.textarea-box {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+#instructions {
+  color: #4C364D;
+  font-size: 14px;
+  border-radius: 8%;
+  outline: none;
+  resize: none;
+  padding: 0.2em;
+}
+button {
+  padding: 10px;
+  background: #82A0C2;
+  font-family: 'Pacifico', cursive;
+  font-size: 0.7em;
+  color: #4C364D;
+  display: block;
+  margin: auto;
+  border-radius: 8%;
+}
