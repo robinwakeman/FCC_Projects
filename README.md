@@ -11,10 +11,10 @@
 *__Note:__ The test suites used in the demos for projects 1-5 and 11-20 only work properly in Chrome and Firefox.*
 
 #### Responsive Web Design
-1. Tribute Page: 
+1. Tribute Page: [PLANTS](https://codepen.io/robinwakeman/pen/bOGYxQ?editors=1100)
 2. Survey Form: [Coffee Order](https://codepen.io/robinwakeman/full/vQorLG)
-3. Product Landing Page:
-4. Technical Documentation: 
+3. Product Landing Page: [bord.]()
+4. Technical Documentation:
 5. Personal Portfolio Page:
 
 #### Javascript Data Structures and Algorithms
