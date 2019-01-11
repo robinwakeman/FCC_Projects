@@ -1,0 +1,28 @@
+body {
+  color: black;
+}
+
+container, #quote-box {
+  border-radius: 15%;
+}
+
+#quote-box {
+  width: 90%;
+  height: 300px;
+  position: absolute;
+  margin: auto;
+  background: pink;
+}
+
+#text {
+  width: 500px;
+  height: 200px;
+  color: black;
+  background: white;
+}
+
+#author {
+  width: 100%;
+  height: 50%;
+  color: black;
+}
