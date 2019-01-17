@@ -1,0 +1,63 @@
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    markdown: 'markdown placeholder',
+    previewText: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.convertMarkdown = this.convertMarkdown.bind(this);
+  }
+  handleChange(event) {
+    this.setState({markdown: event.target.value});
+    this.setState({previewText: this.convertMarkdown(event.target.value)})
+  }
+  convertMarkdown(markdown){
+    return document.getElementById('preview').innerHTML =
+      marked(markdown);
+  }
+  render() {
+    return (
+      <div>
+        <Editor onChange={this.handleChange} markdown={this.state.markdown}/>
+        <Preview markdown={this.state.previewText}/>
+      </div>
+    )
+  }
+}
+
+class Editor extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <ToolBar name="Markdown Editor"/>
+        <textarea id="editor" type="text" value={this.props.markdown} onChange={this.props.onChange}/>
+      </div>
+  )
+  }
+}
+
+class Preview extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <ToolBar name="Document Preview"/>
+        <div id="preview">{this.props.previewText}</div>
+     </div>
+  )
+  }
+}
+
+const ToolBar = (props) => {
+  return (
+    <div>{props.name}</div>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('App'));

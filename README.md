@@ -14,29 +14,29 @@
 1. Tribute Page: [PLANTS](https://codepen.io/robinwakeman/pen/bOGYxQ?editors=1100)
 2. Survey Form: [Coffee Order](https://codepen.io/robinwakeman/full/vQorLG)
 3. Product Landing Page: [bord.]()
-4. Technical Documentation:
-5. Personal Portfolio Page:
+4. Technical Documentation: []() shell thing??? -- TBD
+5. Personal Portfolio Page: [Portfolio Template for Students]()
 
 #### Javascript Data Structures and Algorithms
-6. Palindrome Checker
-7. Roman Numeral Converter
-8. Caesar Cipher
-9. Telephone Number Validator
-10. Cash Register
+6. [Palindrome Checker]()
+7. [Roman Numeral Converter]()
+8. [Caesar Cipher]()
+9. [Telephone Number Validator]()
+10. [Cash Register]()
 
 #### Front End Libraries
-11. Random Quote Machine: [Cat Facts Generator](https://codepen.io/robinwakeman/full/gZBgwV)
-12. Markdown Previewer
+11. Random Quote Machine: Cat Facts Generator, 3 ways: [Plain JS](https://codepen.io/robinwakeman/full/gZBgwV) | [React](https://codepen.io/robinwakeman/full/YdBxWd)
+12. Markdown Previewer: [React Markdown Previewer]()
 13. Drum Machine
 14. JavaScript Calculator
 15. Pomodoro Clock
 
 #### Data Visualization
-16. Bar Chart
-17. Scatterplot Graph
-18. Heat Map
-19. Choropleth Map
-20. Treemap Diagram
+16. Bar Chart: [U.S. GDP 2015]()
+17. Scatterplot Graph: [Doping in Professional Bike Racing @ Alpe d'Huez]()
+18. Heat Map: [Monthly Global Land Surface Temperature 1753-2015]()
+19. Choropleth Map:[U.S. University Education Percentages by County 2010-2014]()
+20. Treemap Diagram:[100 Most Pledged Kickstarter Campaigns, Grouped by Category]()
 
 #### APIs and Microservices
 21. Timestamp Microservice
