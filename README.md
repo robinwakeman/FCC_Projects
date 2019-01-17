@@ -6,10 +6,8 @@
 1. Follow the project's link in the list below to see a live demo hosted on Codepen or Glitch.
 1. Download the source code from the project's folder in this repo, and run it on a local server.
 
-### View Live Demos:
-
-*\*Note: The test suites used in the demos for projects 1-5 and 11-20 only work properly in Chrome and Firefox.*
-
+## Links to Live Demos:
+###### *Note: The test suites used in the demos for projects 1-5 and 11-20 only work properly in Chrome and Firefox.*
 #### Responsive Web Design
 ###### HTML5, CSS3, Visual Design, Acessibility, Responsive Web Design, CSS Flexbox, CSS Grid
 1. Tribute Page: [PLANTS](https://codepen.io/robinwakeman/pen/bOGYxQ?editors=1100)
