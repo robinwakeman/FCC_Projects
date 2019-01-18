@@ -1,6 +1,3 @@
-# 30 Projects: FreeCodeCamp's Full Stack Web Certification
-
-
 # 30 Web Development Projects
 ### I made these for [FreeCodeCamp's](https://www.freecodecamp.org/) Full Stack Web Certification
 
