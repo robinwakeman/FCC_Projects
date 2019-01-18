@@ -1,6 +1,10 @@
-# Free Code Camp: 30 Projects
+# 30 Projects: FreeCodeCamp's Full Stack Web Certification
 
-###### Projects I made for the FCC Full Stack Web Certification.
+
+# 30 Web Development Projects
+### I made these for [FreeCodeCamp's](https://www.freecodecamp.org/) Full Stack Web Certification
+
+###### [My profile on FreeCodeCamp](https://www.freecodecamp.org/robinwakeman)
 
 ##### Two ways to view a project:
 1. Follow the project's link in the list below to see a live demo hosted on Codepen or Glitch.
@@ -10,7 +14,7 @@
 ###### *Note: The test suites used in the demos for projects 1-5 and 11-20 only work properly in Chrome and Firefox.*
 #### Responsive Web Design
 ###### HTML5, CSS3, Visual Design, Acessibility, Responsive Web Design, CSS Flexbox, CSS Grid
-1. Tribute Page: [PLANTS](https://codepen.io/robinwakeman/pen/bOGYxQ?editors=1100)
+1. Tribute Page: [PLANTS](https://codepen.io/robinwakeman/full/bOGYxQ)
 2. Survey Form: [Coffee Order](https://codepen.io/robinwakeman/full/vQorLG)
 3. Product Landing Page: bord.
 4. Technical Documentation: shell thing??? -- TBD
