@@ -1,5 +1,7 @@
 # 30 Web Development Projects
-### I made these for [FreeCodeCamp's](https://www.freecodecamp.org/) Full Stack Web Certification
+### I'm currently building these for [FreeCodeCamp's](https://www.freecodecamp.org/) Full Stack Web Certification
+
+### Progress: 8 / 30
 
 ###### [My profile on FreeCodeCamp](https://www.freecodecamp.org/robinwakeman)
 
@@ -13,16 +15,16 @@
 ###### HTML5, CSS3, Visual Design, Acessibility, Responsive Web Design, CSS Flexbox, CSS Grid
 1. Tribute Page: [PLANTS](https://codepen.io/robinwakeman/full/bOGYxQ)
 2. Survey Form: [Coffee Order](https://codepen.io/robinwakeman/full/vQorLG)
-3. Product Landing Page: bord.
-4. Technical Documentation: shell thing??? -- TBD
+3. Product Landing Page: 
+4. Technical Documentation: 
 5. Personal Portfolio Page: 
 
 #### Javascript Data Structures and Algorithms 
 ###### \+ ES6, Regex, Debugging, Object Oriented JS, Functional JS
-6. Palindrome Checker
-7. Roman Numeral Converter
-8. Caesar Cipher
-9. Telephone Number Validator
+6. [Palindrome Checker](https://codepen.io/robinwakeman/pen/roEZxE)
+7. [Roman Numeral Converter](https://codepen.io/robinwakeman/pen/WPeGQX)
+8. [Caesar Cipher](https://codepen.io/robinwakeman/pen/xMKEZN)
+9. [Telephone Number Validator](https://codepen.io/robinwakeman/pen/XOrjdO)
 10. Cash Register
 
 #### Front End Libraries
