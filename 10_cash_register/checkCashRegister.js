@@ -5,6 +5,15 @@ function checkCashRegister(price, payment, cid) {
   };
   let changeAmount, cidAmount;
   let changeUnitCount=[], cidUnitCount=[];
+  let unitWorth = {'PENNY': 0.01,
+                  'NICKEL': 0.05,
+                  'DIME': 0.1,
+                  'QUARTER': 0.25,
+                  'ONE': 1,
+                  'FIVE': 5,
+                  'TEN': 10,
+                  'TWENTY': 20,
+                  'ONE HUNDRED': 10};
 
   // calculate the total value of the change in drawer
   cidAmount = cid.reduce(function(sum, current){
@@ -19,39 +28,12 @@ function checkCashRegister(price, payment, cid) {
   changeAmount = payment - price;
   console.log("change amount: "+changeAmount); //test
 
-  // cid unit count = change unit count
-  // count how many of each type of change contained in cid
-  cidUnitCount = cid.map(function(currencyUnit){
-    switch(currencyUnit[0]) {
-      case "PENNY":
-        return {"PENNY": currencyUnit[1]*100};
-        break;
-      case "NICKEL":
-        return {"NICKEL": currencyUnit[1]*20};
-        break;
-      case "DIME":
-        return {"DIME": currencyUnit[1]*10};
-        break;
-      case "QUARTER":
-        return {"QUARTER": currencyUnit[1]*4};
-        break;
-      case "ONE":
-        return {"ONE": currencyUnit[1]};
-        break;
-      case "FIVE":
-        return {"FIVE": currencyUnit[1]/5};
-        break;
-      case "TEN":
-        return {"TEN": currencyUnit[1]/10};
-        break;
-      case "TWENTY":
-        return {"TWENTY": currencyUnit[1]/20};
-        break;
-      case "ONE HUNDRED":
-        return {"ONE HUNDRED": currencyUnit[1]/100};
-        break;
-    }
+  // count how many of each type of change contained in cid, return a new array
+  // for example: cid[0]{'PENNY': 1.01} -> cidUnitCount[0] = {'PENNY': 101}
+  cidUnitCount = cid.map(function(unitType){
+    return {[unitType[0]]: unitType[1]/unitWorth[unitType[0]]};
   });
+
   console.log("cid unit count keys: "+Object.keys(cidUnitCount)); //test
   console.log(Object.keys(cidUnitCount[0])); //test - unit name
   console.log(cidUnitCount[0][Object.keys(cidUnitCount[0])]); //test - unit count
