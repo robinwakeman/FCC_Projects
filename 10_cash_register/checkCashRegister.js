@@ -19,7 +19,7 @@ function checkCashRegister(price, payment, cid) {
                   return sum + current[1];
                 }, 0);
 
-  cidAmount = parseFloat(cidAmount).toFixed(2); // adjust for rounding error
+  cidAmount = Math.round(cidAmount * 100) / 100; // adjust for precision error
 
   changeAmount = payment - price; // calculate amount of change due
 
@@ -64,11 +64,13 @@ function checkCashRegister(price, payment, cid) {
       cid[i][1] -= unitAmount;  // decrease cash in drawer (cid)
       changeAmount-= unitAmount; // decrease amount of change still needed
 
-      unitSum = parseFloat(unitSum).toFixed(2); // adjust for weird float rounding error
-      changeAmount = parseFloat(changeAmount).toFixed(2);
+      unitSum = Math.round(unitSum * 100) / 100; // adjust for precision error
+      changeAmount = Math.round(changeAmount * 100) / 100;
+      cid[i][1] = Math.round(cid[i][1] * 100) / 100;
+
     }
 
-    // if there is change in that unit, put it in the change array
+    // put change of this unit type in the change array only if the amount > 0
     if(unitSum > 0){
       notification.change.unshift([[cid[i][0]], unitSum]);
     }
@@ -76,6 +78,7 @@ function checkCashRegister(price, payment, cid) {
   // Case 4: if cid >= change due, but exact change cannot be given, replicate Case 1
   //
   // if changeAmount > 0 at the end of the sorting, that means we couldn't give exact change
+  console.log("changeAmount: "+changeAmount);
   if(changeAmount > 0) {
     notification.status = "INSUFFICIENT_FUNDS";
     notification.change = [];
@@ -95,7 +98,7 @@ function checkCashRegister(price, payment, cid) {
 // ["TWENTY", 60],
 // ["ONE HUNDRED", 100]]
 
-//let x=checkCashRegister(19.5, 301.16, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
-let x=checkCashRegister(19.95, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
-console.log("status: "+x.status+" change: "+ x.change);
+
+let five=checkCashRegister(19.50, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+console.log("status5: "+five.status+" change: "+ five.change);
 
