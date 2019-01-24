@@ -19,35 +19,23 @@ function checkCashRegister(price, payment, cid) {
                   return sum + current[1];
                 }, 0);
 
-  // adjust for rounding error
-  cidAmount = parseFloat(cidAmount).toFixed(2);
-  //console.log("cid amount: "+ cidAmount); //test
+  cidAmount = parseFloat(cidAmount).toFixed(2); // adjust for rounding error
 
-  // calculate amount of change due
-  changeAmount = payment - price;
-  //console.log("change amount: "+changeAmount); //test
+  changeAmount = payment - price; // calculate amount of change due
 
-    // Case 1: if cid < change due,
-  // return insufficient funds status object
+  // Case 1: if cid < change due, set status to "INSUFFICIENT_FUNDS" and return notification object immediately
   if(cidAmount < changeAmount) {
     notification.status = "INSUFFICIENT_FUNDS";
     notification.change = [];
     return notification; // no point in continuing if the outcome has already been determined
   }
 
-  // Case 2: if cid >= change due, but exact change cannot be given,
-  // return insufficient funds status object
-  // TODO
-
-
-  // Case 3: if cid == change due,
-  // return closed status object
+  // Case 2: if cid == change due, set status to "CLOSED", continue onwards to populate change array
   if(cidAmount == changeAmount) {
     notification.status = "CLOSED";
   }
 
-  // Case 4: if cid > change due,
-  // return open status object
+  // Case 3: if cid > change due, set status to "OPEN", continue onwards to populate change array
   if(cidAmount > changeAmount) {
     notification.status = "OPEN";
   }
@@ -64,34 +52,33 @@ function checkCashRegister(price, payment, cid) {
   // so PENNY object will be at cid[0], ONE HUNDRED object will be at cid[8]
   for(let i=8; i>=0; i--){
 
-//LOGIC ERROR IN THIS SECTION
-    let unitAmount = unitWorth[cid[i][0]];
-    let unitSum = 0;
+    let unitAmount = unitWorth[cid[i][0]]; // ex. PENNY unitWorth is 0.01
+    let unitSum = 0; // total dollar amount this unit will have in change[]
 
-    if(unitAmount <= cid[i][1] && unitAmount < changeAmount){
-      unitSum = unitAmount;
+    // while
+    // 1 - the amount of change we still need is greater than the amount of one more unit
+    // 2 - there is enough of that unit in the drawer
+    while(changeAmount >= unitAmount && cid[i][1] >= unitAmount) {
+
+      unitSum += unitAmount; // add another of that unit to unitSum
+      cid[i][1] -= unitAmount;  // decrease cash in drawer (cid)
+      changeAmount-= unitAmount; // decrease amount of change still needed
+
+      unitSum = parseFloat(unitSum).toFixed(2); // adjust for weird float rounding error
+      changeAmount = parseFloat(changeAmount).toFixed(2);
     }
-
-    // while unitAmount <= amount of that unit in drawer cid[i][1]
-    if(unitSum > 0){
-    while(unitSum <= cid[i][1] && unitSum < changeAmount) {
-      // add another of that unit to unitAmount
-//      unitAmount += unitWorth[cid[i][0]];
-      unitSum += unitAmount;
-      // decrease cash in drawer (cid) by amount of change given
-      changeAmount-= unitAmount;
-      //unitAmount = Math.floor(changeAmount / unitWorth[cid[i][0]]) * unitWorth[cid[i][0]];
-    }}
-    console.log("unitAmount:"+unitSum);
-
-    // round dollar amount to two decimal places
-    unitSum = parseFloat(unitSum).toFixed(2)
-    console.log(cid[i][0]+" worth: "+unitWorth[cid[i][0]]+ " | given: "+unitSum); //test
 
     // if there is change in that unit, put it in the change array
     if(unitSum > 0){
       notification.change.unshift([[cid[i][0]], unitSum]);
     }
+  }
+  // Case 4: if cid >= change due, but exact change cannot be given, replicate Case 1
+  //
+  // if changeAmount > 0 at the end of the sorting, that means we couldn't give exact change
+  if(changeAmount > 0) {
+    notification.status = "INSUFFICIENT_FUNDS";
+    notification.change = [];
   }
 
   return notification;
@@ -109,6 +96,6 @@ function checkCashRegister(price, payment, cid) {
 // ["ONE HUNDRED", 100]]
 
 //let x=checkCashRegister(19.5, 301.16, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
-let x=checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+let x=checkCashRegister(19.95, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
 console.log("status: "+x.status+" change: "+ x.change);
 
