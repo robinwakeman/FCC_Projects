@@ -98,7 +98,23 @@ function checkCashRegister(price, payment, cid) {
 // ["TWENTY", 60],
 // ["ONE HUNDRED", 100]]
 
+// case 1/2
+ let two=checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+ console.log("status2: "+two.status+" change: "+ two.change);
 
-let five=checkCashRegister(19.50, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
-console.log("status5: "+five.status+" change: "+ five.change);
+//case 3 - answer on fcc listed in wrong order
+let three=checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+ console.log("status3: "+three.status+" change: "+three.change);
+
+// case 4
+let four=checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+ console.log("status4: "+four.status+" change: "+four.change);
+
+// case 5
+let five=checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+ console.log("status5: "+five.status+" change: "+five.change);
+// case 6
+let six=checkCashRegister(19.50, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+console.log("status5: "+six.status+" change: "+ six.change);
+
 
