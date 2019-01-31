@@ -1,7 +1,7 @@
 # 30 Web Development Projects
 ### I'm currently building these for [FreeCodeCamp's](https://www.freecodecamp.org/) Full Stack Web Certification
 
-### Progress: 8 / 30
+### Progress: 9 / 30
 
 ###### [My profile on FreeCodeCamp](https://www.freecodecamp.org/robinwakeman)
 
@@ -25,7 +25,7 @@
 7. [Roman Numeral Converter](https://codepen.io/robinwakeman/pen/WPeGQX)
 8. [Caesar Cipher](https://codepen.io/robinwakeman/pen/xMKEZN)
 9. [Telephone Number Validator](https://codepen.io/robinwakeman/pen/XOrjdO)
-10. Cash Register
+10. [Cash Register](https://codepen.io/robinwakeman/pen/xMwOMd)
 
 #### Front End Libraries
 ###### jQuery, React, Redux, Sass, Bootstrap, JSON APIs & AJAX 
