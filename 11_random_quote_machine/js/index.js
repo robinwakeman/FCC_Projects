@@ -1,48 +1,55 @@
-// Return a random fact object from the given JSON object which contains a list of all facts (json)
-function getRandomFactObj(json,prop){
-  let random = Math.floor(Math.random()*json[prop].length);
+ // Return a random fact object from the given JSON object which contains a list of all facts (json)
+function getRandomFactObj(json, prop) {
+  var random = Math.floor(Math.random() * json[prop].length);
   return json[prop][random];
-} 
-// Display the text property of the given fact object (factObj) within the html tags specified by the given id (positionId)
-function displayFactText(factObj, positionId){ 
-  document.getElementById(positionId).innerHTML = factObj.text;
 }
-// Display the author of the given fact object (factObj) within the html tags specified by the given id (positionId)
-function displayFactAuthor(factObj, positionId){
-  let authorName = "Anonymous";
-  if (factObj.user.hasOwnProperty('name')){
-    authorName = factObj.user.name.first; + "  " + factObj.user.name.last;
+// Display the text property of the given fact object (currentFact) within the html tags specified by the given id (positionId)
+function displayFactText(currentFact, positionId) {
+  document.getElementById(positionId).innerHTML = currentFact.text;
+}
+// Display the author of the given fact object (currentFact) within the html tags specified by the given id (positionId)
+function displayFactAuthor(currentFact, positionId) {
+  var authorName = "Anonymous";
+  if (currentFact.user.hasOwnProperty('name')) {
+    authorName = "- " + currentFact.user.name.first + "  " + currentFact.user.name.last;
   }
   document.getElementById(positionId).innerHTML = authorName;
 }
+function displayErrorText() {
+  document.getElementById('text').innerHTML = "Connection issue: Can't reach API to retrieve cat facts. <br/> Please try again later :,(";
+}
 
 // On page Load
-document.addEventListener('DOMContentLoaded',function(){ 
-    
-      let factObjList; // will store the json object: a list of cat fact objects
-      
-      // Request section
-      let xhr = new XMLHttpRequest(); 
-      xhr.open("GET",      'https://gist.githubusercontent.com/robinwakeman/b57ef92f04fc9fc77ef0240cca8a6b29/raw/3dcbbc4ac796ea794c38da480dca5bcda10d8494/catfact-copy',true);
-      xhr.setRequestHeader("Accept","application/json");         
-      
-      xhr.onload=function(){ 
-        factObjList=JSON.parse(xhr.responseText); // load the received json object
-        let factObj = getRandomFactObj(factObjList, "all");
-        displayFactText(factObj, 'text');
-        displayFactAuthor(factObj, 'author');
-      };
-      xhr.send(); // End of request section
-      
-      // Buttons section
-      document.getElementById('new-quote').onclick = function(){ 
-        let factObj = getRandomFactObj(factObjList, "all");
-        displayFactText(factObj, 'text');
-        displayFactAuthor(factObj, 'author')
-      };
-     // document.getElementById('tweet-quote').onclick = function(){
-       // let url = 'twitter.com/intent/tweet?text=something%goes%here';
-        //window.open(url, 'Share', 'width=550, height=400, toolbar=0, scrollbars=1, location=0, statusbar=0, menubar=0, resizable=0');
-     // }
-   
-  });
+document.addEventListener('DOMContentLoaded', function () {
+
+  var factList = void 0; // will store the json object: a list of cat fact objects
+
+  // Request section
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", 'https://gist.githubusercontent.com/robinwakeman/b57ef92f04fc9fc77ef0240cca8a6b29/raw/3dcbbc4ac796ea794c38da480dca5bcda10d8494/catfact-copy', true);
+  //xhr.open("GET","",true);
+  xhr.setRequestHeader("Accept", "application/json");
+
+  // alternatively could have used xhr.onload = function(){};
+  xhr.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      factList = JSON.parse(xhr.responseText); // load the received json object
+      var _currentFact = getRandomFactObj(factList, "all");
+      displayFactText(_currentFact, 'text');
+      displayFactAuthor(_currentFact, 'author');
+    } else {
+      displayErrorText();
+    }
+  };
+  xhr.send(); // End of request section
+
+  // Buttons section
+  document.getElementById('new-quote').onclick = function () {
+    var currentFact = getRandomFactObj(factList, "all");
+    displayFactText(currentFact, 'text');
+    displayFactAuthor(currentFact, 'author');
+  };
+  document.getElementById('tweet-quote').text = currentFact.text;
+
+
+});
