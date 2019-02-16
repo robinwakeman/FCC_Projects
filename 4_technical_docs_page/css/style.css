@@ -1,0 +1,22 @@
+html, body {
+  min-width: 290px;
+  color: #333745;
+  background-color: #fff;
+  font-family: 'Maven Pro', sans-serif;
+  line-height: 1.5;
+}
+
+#menu {
+  position: fixed;
+  width: 260px;
+  height: 100%;
+  border-right: solid;
+  border-color: pink;
+}
+
+#content {
+  position: absolute;
+  margin-left: 280px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
