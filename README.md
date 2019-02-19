@@ -12,14 +12,14 @@
 ## Links to Live Demos:
 ###### *Note: The test suites used in the demos for projects 1-5 and 11-20 only work properly in Chrome and Firefox.*
 #### Responsive Web Design
-###### HTML5, CSS3, Visual Design, Acessibility, Responsive Web Design, CSS Flexbox, CSS Grid
+###### HTML5 (+Pug), CSS3 (+Sass), Visual Design, Acessibility, Responsive Web Design, CSS Flexbox, CSS Grid
 1. Tribute Page: [PLANTS](https://codepen.io/robinwakeman/full/bOGYxQ)
 2. Survey Form: [Coffee Order](https://codepen.io/robinwakeman/full/vQorLG)
-3. Product Landing Page: 
-4. Technical Documentation: 
-5. Personal Portfolio Page: 
+3. Product Landing Page:
+4. Technical Documentation: [In Progress](https://codepen.io/robinwakeman/full/wNQyRM)
+5. Personal Portfolio Page:
 
-#### Javascript Data Structures and Algorithms 
+#### Javascript Data Structures and Algorithms
 ###### \+ ES6, Regex, Debugging, Object Oriented JS, Functional JS
 6. [Palindrome Checker](https://codepen.io/robinwakeman/pen/roEZxE)
 7. [Roman Numeral Converter](https://codepen.io/robinwakeman/pen/WPeGQX)
@@ -28,7 +28,7 @@
 10. [Cash Register](https://codepen.io/robinwakeman/pen/xMwOMd)
 
 #### Front End Libraries
-###### jQuery, React, Redux, Sass, Bootstrap, JSON APIs & AJAX 
+###### jQuery, React, Redux, Bootstrap, JSON APIs & AJAX
 11. Random Quote Machine: __Cat Facts Generator:__ [Plain JS](https://codepen.io/robinwakeman/full/gZBgwV) | [React](https://codepen.io/robinwakeman/full/YdBxWd)
 12. Markdown Previewer: [React Markdown Previewer](https://codepen.io/robinwakeman/full/ebbyXL)
 13. Drum Machine

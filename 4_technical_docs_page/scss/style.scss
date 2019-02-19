@@ -1,11 +1,61 @@
 $menu-width: 260px;
+$menu-items-count: 5;
+
+$page-bg-color: #fff;
+$main-text-color: #333745;
+$header-text-color: #e63462;
+$highlight-color: #c7efcf;
+$decoration-color: #fe5f55;
+$menu-color: #4d4e53;
+$hover-color: #eee;
+
+$main-font: 'Maven Pro', sans-serif;
+$header-font: 'Righteous', cursive;
+$menu-font: 'Roboto Mono', monospace;
+
+@mixin menu-decoration($zIndex, $bgColor, $size, $duration) {
+  content: "";
+  position: absolute;
+  z-index: $zIndex;
+  background-color: $bgColor;
+  width: $size;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation-name: slide-in;
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+}
 
 html,body{
   min-width:290px;
-  color: #333745;
-  background-color: #fff; 
-  font-family: 'Maven Pro', sans-serif;
+  color: $main-text-color;
+  background-color: $page-bg-color; 
+  font-family: $main-font;
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: $main-text-color;
+}
+
+header {
+  font-family: $header-font;
+  color: $header-text-color;
+  text-shadow: 4px 2px $highlight-color;
+  font-size: 30px;
+  margin:10px;
+  text-align:center;
+  font-size:1.8em;
+}
+
+code {
+  display: block;
+  position: relative;
+  background-color: $highlight-color;
+  padding: 10%;
+  border-radius: 4%;
 }
 
 #menu {
@@ -13,12 +63,67 @@ html,body{
   width: $menu-width;
   height: 100%;
   border-right:solid;
-  border-color: pink;
-}
+  border-color: $menu-color;
+  font-family: $menu-font;
+  
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $menu-color;
+    
+    li {
+      position: relative;
+      border-top: 1px solid $menu-color;
+      padding: 0;
+
+      a {
+        display: block;
+        padding: 10px 10px 10px 50px;
+      }
+      
+    }
+    
+    li:hover {
+      background: $hover-color;
+      border: 1px inset $menu-color;
+      cursor: pointer;
+    } 
+    
+    li:before{
+      @include menu-decoration(1, $header-text-color, 12%, 1.6s);
+    }
+    
+    li:after {
+      @include menu-decoration(1, $decoration-color, 8%, 0.8s);
+    }
+    
+    // to animate: use mixin as function, for 1 to $menu-items-count
+    li:nth-child(1):before { animation-delay: 1s; }
+    
+  } // ul block (scss)
+} // menu block (scss)
 
 #content {
   position: absolute;
   margin-left: $menu-width+20px;
   padding:20px;
   margin-bottom:110px;
+  
+  section {
+    
+    article {
+      margin: 10px;
+      font-size: 1em;
+    }
+  } // section block (scss)
+} // #content block (scss)
+
+@keyframes slide-in {
+  0% {
+   left: -10%;
+  }
+  100% {
+    left: 0;
+  }
 }

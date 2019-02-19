@@ -2,8 +2,31 @@ html, body {
   min-width: 290px;
   color: #333745;
   background-color: #fff;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #333745;
+}
+
+header {
+  font-family: "Righteous", cursive;
+  color: #e63462;
+  text-shadow: 4px 2px #c7efcf;
+  font-size: 30px;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+code {
+  display: block;
+  position: relative;
+  background-color: #c7efcf;
+  padding: 10%;
+  border-radius: 4%;
 }
 
 #menu {
@@ -11,7 +34,57 @@ html, body {
   width: 260px;
   height: 100%;
   border-right: solid;
-  border-color: pink;
+  border-color: #4d4e53;
+  font-family: "Roboto Mono", monospace;
+}
+#menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #4d4e53;
+}
+#menu ul li {
+  position: relative;
+  border-top: 1px solid #4d4e53;
+  padding: 0;
+}
+#menu ul li a {
+  display: block;
+  padding: 10px 10px 10px 50px;
+}
+#menu ul li:hover {
+  background: #eee;
+  border: 1px inset #4d4e53;
+  cursor: pointer;
+}
+#menu ul li:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-color: #e63462;
+  width: 12%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation-name: slide-in;
+  animation-duration: 1.6s;
+  animation-fill-mode: forwards;
+}
+#menu ul li:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-color: #fe5f55;
+  width: 8%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation-name: slide-in;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+#menu ul li:nth-child(1):before {
+  animation-delay: 1s;
 }
 
 #content {
@@ -19,4 +92,17 @@ html, body {
   margin-left: 280px;
   padding: 20px;
   margin-bottom: 110px;
+}
+#content section article {
+  margin: 10px;
+  font-size: 1em;
+}
+
+@keyframes slide-in {
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 0;
+  }
 }
