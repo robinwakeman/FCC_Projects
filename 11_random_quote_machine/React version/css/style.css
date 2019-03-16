@@ -1,0 +1,92 @@
+body {
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+flex-column-center, #cat-head, #cat-head #quote-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#cat-head {
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+  top: 120px;
+  position: relative;
+  margin: auto;
+  background: #3c3c3c;
+  border-radius: 45%;
+}
+#cat-head #quote-box {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 24%;
+}
+#cat-head #quote-box #text {
+  height: 38%;
+  padding: 0 4%;
+  z-index: 2;
+  overflow-y: scroll;
+}
+#cat-head #quote-box #author {
+  height: 10%;
+  z-index: 2;
+  padding: 1em;
+}
+#cat-head #quote-box #buttons-box button {
+  border: none;
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 10%;
+  color: #FFF;
+  background: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+}
+#cat-head #quote-box #buttons-box button:focus {
+  outline: none;
+}
+
+#cat-head::before {
+  content: '';
+  position: absolute;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: #3c3c3c;
+  width: 30%;
+  height: 50%;
+  top: -20%;
+  left: 4%;
+}
+
+#cat-head::after {
+  content: '';
+  position: absolute;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: #3c3c3c;
+  width: 30%;
+  height: 50%;
+  top: -20%;
+  left: 66%;
+}
+
+@media (max-width: 390px) {
+  #cat-head > #quote-box > #buttons-box > button {
+    margin: 0;
+    padding: 6px;
+  }
+}
+@media (max-width: 330px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  #cat-head {
+    height: 360px;
+  }
+}
