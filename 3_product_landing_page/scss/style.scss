@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  background: #212121;
+}
+#wrapper {
+  font-family: 'Comfortaa', cursive;
+  position: relative;
+}
+#header {
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  //border: 10px solid black;
+  //border-image: linear-gradient(to top, purple, blue) 1 100%;
+  padding: 20px 6%;
+  background: #212121;
+  z-index: 4;
+  min-width: 550px;
+}
+#header:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 4px;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(blue), to(purple));
+}
+#header-title {
+  font-size: 3em;
+  font-weight: 700;
+}
+@media (max-width: 300px) {
+  #header-title {
+    font-size: 2em;
+  }
+}
+#nav-bar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  #nav-bar ul {
+    flex-direction: column;
+  }
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+@media (max-width: 400px) {
+  #nav-bar {
+    display: none;
+  }
+  #header-title {
+    padding-left: 20%;
+  }
+}
+.main-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-container section {
+
+}
+.main-container section h2 {
+  font-size: 2em;
+  font-weight: 300;
+  //text-transform: uppercase;
+}
+#headline {
+  margin-bottom: 50px;
+
+  h2 {
+    font-weight: 300;
+    font-size: 2.2em;
+  }
+}
+
+#features {
+  //border: 4px solid blue;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+#features div {
+  margin: 20px;
+  z-index: 3;
+}
+#features div h3 {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+#featues div p {
+  text-align: left;
+  margin: 10px;
+  font-weight: 300;
+}
+.icon {
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+#demo {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+#demo iframe {
+  max-width: 560px;
+  //width: 100%;
+}
+
+// prices
+
+#prices {
+  margin-top: 60px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  #tenor, #bass, #valve {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100%  / 3);
+    margin: 10px;
+    border-width: 1px;
+    //border: 3px solid navy;
+    //border-image: linear-gradient(to bottom, blue, purple) 1 100%;
+
+
+    .level {
+      //background-image: linear-gradient(45deg, purple, blue);
+      background: transparent;
+      //color: navy;
+      padding: 15px 0;
+      width: 100%;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .top-layer {
+      z-index: 10;
+    }
+
+    h2 {
+      margin-top: 15px;
+    }
+
+    ol {
+      margin: 15px 20px;
+
+      li {
+        padding: 5px 0;
+        line-height: 1.5em;
+       }
+    }
+
+    button {
+      border: 0;
+      bottom: 0;
+      margin: 15px 0;
+      background: blue;
+      //background-image: linear-gradient(45deg, blue, purple);
+      font-weight: 400;
+      font-size: 16px;
+      padding: 10px;
+      color: white;
+      border-radius: 10%;
+
+      &:hover {
+        background-color: purple;
+        transition: background-color 1s;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: purple;
+      }
+
+    }
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    #tenor, #bass, #valve { max-width: 300px; width: 100%; margin: 0 auto; margin-bottom: 10px; }
+  }
+}
+
+@media (max-width: 100px) {
+  header {
+    background: pink;
+  }
+}
+.text-box {
+  color: white;
+  z-index: 3;
+}
+.box {
+  position: relative;
+  color: white;
+  z-index: 3;
+}
+.box:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  bottom: -3px;
+  right: -3px;
+  border-radius: 4%;
+  //background: white;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(blue), to(purple));
+ // background-image: -webkit-linear-gradient(#000, transparent);
+  //background-image: -moz-linear-gradient(#000, transparent);
+  //background-image: -o-linear-gradient(#000, transparent);
+  z-index: 1;
+}
+.box:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 4%;
+  background: #212121;
+  color: white;
+}

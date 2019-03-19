@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  background: #212121;
+}
+
+#wrapper {
+  font-family: 'Comfortaa', cursive;
+  position: relative;
+}
+
+#header {
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  padding: 20px 6%;
+  background: #212121;
+  z-index: 4;
+  min-width: 550px;
+}
+
+#header:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 4px;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(blue), to(purple));
+}
+
+#header-title {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+@media (max-width: 300px) {
+  #header-title {
+    font-size: 2em;
+  }
+}
+#nav-bar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  #nav-bar ul {
+    flex-direction: column;
+  }
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+@media (max-width: 400px) {
+  #nav-bar {
+    display: none;
+  }
+
+  #header-title {
+    padding-left: 20%;
+  }
+}
+.main-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-container section h2 {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+#headline {
+  margin-bottom: 50px;
+}
+#headline h2 {
+  font-weight: 300;
+  font-size: 2.2em;
+}
+
+#features {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#features div {
+  margin: 20px;
+  z-index: 3;
+}
+
+#features div h3 {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+#featues div p {
+  text-align: left;
+  margin: 10px;
+  font-weight: 300;
+}
+
+.icon {
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+#demo {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+#demo iframe {
+  max-width: 560px;
+}
+
+#prices {
+  margin-top: 60px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#prices #tenor, #prices #bass, #prices #valve {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100%  / 3);
+  margin: 10px;
+  border-width: 1px;
+}
+#prices #tenor .level, #prices #bass .level, #prices #valve .level {
+  background: transparent;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#prices #tenor .top-layer, #prices #bass .top-layer, #prices #valve .top-layer {
+  z-index: 10;
+}
+#prices #tenor h2, #prices #bass h2, #prices #valve h2 {
+  margin-top: 15px;
+}
+#prices #tenor ol, #prices #bass ol, #prices #valve ol {
+  margin: 15px 20px;
+}
+#prices #tenor ol li, #prices #bass ol li, #prices #valve ol li {
+  padding: 5px 0;
+  line-height: 1.5em;
+}
+#prices #tenor button, #prices #bass button, #prices #valve button {
+  border: 0;
+  bottom: 0;
+  margin: 15px 0;
+  background: blue;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px;
+  color: white;
+  border-radius: 10%;
+}
+#prices #tenor button:hover, #prices #bass button:hover, #prices #valve button:hover {
+  background-color: purple;
+  transition: background-color 1s;
+}
+#prices #tenor button:focus, #prices #bass button:focus, #prices #valve button:focus {
+  outline: none;
+  background-color: purple;
+}
+@media (max-width: 800px) {
+  #prices {
+    flex-direction: column;
+  }
+  #prices #tenor, #prices #bass, #prices #valve {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 100px) {
+  header {
+    background: pink;
+  }
+}
+.text-box {
+  color: white;
+  z-index: 3;
+}
+
+.box {
+  position: relative;
+  color: white;
+  z-index: 3;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  bottom: -3px;
+  right: -3px;
+  border-radius: 4%;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(blue), to(purple));
+  z-index: 1;
+}
+
+.box:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 4%;
+  background: #212121;
+  color: white;
+}
