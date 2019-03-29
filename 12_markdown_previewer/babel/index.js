@@ -15,7 +15,7 @@ class App extends React.Component {
     });
   }
   convertMarkdown(markdown) {
-    return (document.getElementById("preview").innerHTML = marked(markdown));
+    return (document.getElementById("preview").innerHTML = marked(markdown, {breaks: true, gfm: true}));
   }
   componentDidMount() {
     let placeholderText = `

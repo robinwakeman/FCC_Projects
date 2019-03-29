@@ -20,7 +20,7 @@
 5. Personal Portfolio Page:
 
 #### Javascript Data Structures and Algorithms
-###### \+ ES6, Regex, Debugging, Object Oriented JS, Functional JS
+###### \+ ES6, Regex, Object Oriented JS, Functional JS
 6. [Palindrome Checker](https://codepen.io/robinwakeman/pen/roEZxE)
 7. [Roman Numeral Converter](https://codepen.io/robinwakeman/pen/WPeGQX)
 8. [Caesar Cipher](https://codepen.io/robinwakeman/pen/xMKEZN)
