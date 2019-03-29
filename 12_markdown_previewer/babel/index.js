@@ -18,8 +18,7 @@ class App extends React.Component {
     return (document.getElementById("preview").innerHTML = marked(markdown, {breaks: true, gfm: true}));
   }
   componentDidMount() {
-    let placeholderText = `
-# Type your markdown here!
+    let placeholderText = `# Type your markdown here!
 > _Clear this placeholder text with ctrl-a + del_
 
 __This previewer uses [Marked.js](https://marked.js.org/#/README.md), which supports these flavours of markdown:__
@@ -41,8 +40,7 @@ __Now you can use the__ \`marked(String)\` __function to render the markup, like
 
 \` document.getElementById('content').innerHTML = marked('# Marked in browser'); \`
 
-![Random Image](https://d1vki863cvir6c.cloudfront.net/uploads/topic/image/546/icon-only-200.png)
-![Markdown Image](https://cdn.iconscout.com/icon/free/png-256/markdown-2-458334.png)`;
+![Random Image](https://d1vki863cvir6c.cloudfront.net/uploads/topic/image/546/icon-only-200.png) ![Markdown Image](https://cdn.iconscout.com/icon/free/png-256/markdown-2-458334.png)`;
 
     this.setState({
       markdown: placeholderText,
@@ -53,11 +51,15 @@ __Now you can use the__ \`marked(String)\` __function to render the markup, like
     return (
       <div className="row">
         <Editor
-          column="col"
+          column="col-md-6 editorContainer"
           onChange={this.handleChange}
           markdown={this.state.markdown}
         />
-        <Preview column="col" markdown={this.state.previewText} />
+        <Preview
+          className="previewContainer"
+          column="col-md-6"
+          markdown={this.state.previewText}
+        />
       </div>
     );
   }
@@ -97,7 +99,7 @@ class Preview extends React.Component {
 }
 
 const ToolBar = props => {
-  return <div>{props.name}</div>;
+  return <div className="toolbar">{props.name}</div>;
 };
 
 ReactDOM.render(<App />, document.getElementById("App"));
